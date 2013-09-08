@@ -1,6 +1,6 @@
 {
   "name": "timestream-filters",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Filters for sequential objectMode streams (e.g. timeseries data)",
   "main": "index.js",
   "directories": {
