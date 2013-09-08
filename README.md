@@ -25,17 +25,17 @@ function stream() {
 stream().pipe(filters.range("v", 120, 500)).pipe(concat(console.log))
 
 /*
-[ { v: 250, foo: 1250 },
-  { v: 500, foo: 1500 },
-  { v: 550, foo: 1550 } ]
+[ { v: 150, foo: 1150 },
+  { v: 250, foo: 1250 },
+  { v: 500, foo: 1500 } ]
  */
 
 stream().pipe(filters.rtrim(3)).pipe(concat(console.log))
 
 /*
-[ { v: 150, foo: 1150 },
-  { v: 250, foo: 1250 },
-  { v: 500, foo: 1500 } ]
+[ { v: 250, foo: 1250 },
+  { v: 500, foo: 1500 },
+  { v: 550, foo: 1550 } ]
  */
 
 stream().pipe(filters.ltrim(3)).pipe(concat(console.log))
