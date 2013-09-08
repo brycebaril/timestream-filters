@@ -1,0 +1,38 @@
+{
+  "name": "timestream-filters",
+  "version": "0.0.0",
+  "description": "Filters for sequential objectMode streams (e.g. timeseries data)",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Ravenwall/timestream-filters.git"
+  },
+  "keywords": [
+    "stream",
+    "timestream",
+    "timeseries",
+    "filter",
+    "range",
+    "limit"
+  ],
+  "author": "Bryce B. Baril",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ravenwall/timestream-filters/issues"
+  },
+  "dependencies": {
+    "through2": "~0.2.1",
+    "through2-filter": "~1.1.0"
+  },
+  "devDependencies": {
+    "stream-spigot": "~2.1.1",
+    "concat-stream": "~1.0.1",
+    "tape": "~1.1.0"
+  }
+}
