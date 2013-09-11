@@ -1,6 +1,7 @@
 module.exports.range = range
 module.exports.rtrim = rtrim
 module.exports.ltrim = ltrim
+module.exports.scrub = scrub
 module.exports.filter = filter
 
 var through2 = require("through2")
@@ -41,6 +42,12 @@ function ltrim(n) {
   return through2({objectMode: true}, function (record, encoding, callback) {
     if (count++ < n) this.push(record)
     return callback()
+  })
+}
+
+function scrub(fn) {
+  return throughFilter({objectMode: true}, function (record) {
+    return Object.keys(record).length > 1
   })
 }
 

@@ -68,6 +68,7 @@ API
   * range
   * rtrim
   * ltrim
+  * scrub
   * filter
 
 `range(seqKey, start, end)`
@@ -84,6 +85,11 @@ Trim the stream to `n` records from the right, e.g. the latest `n` records.
 ---
 
 Trim the stream to `n` records from the left, e.g. the first `n` records.
+
+`scrub()`
+---
+
+Remove any records that are "empty", that is they have no data beyond the timestamp.
 
 `filter(fn)`
 ---

@@ -9,6 +9,7 @@ test("init", function (t) {
   t.equals(typeof filters.range, "function", "range is a function")
   t.equals(typeof filters.rtrim, "function", "rtrim is a function")
   t.equals(typeof filters.ltrim, "function", "ltrim is a function")
+  t.equals(typeof filters.scrub, "function", "scrub is a function")
   t.equals(typeof filters.filter, "function", "filter is a function")
 
   t.end()
@@ -85,6 +86,30 @@ test("ltrim", function (t) {
   ])
 
   stream.pipe(filters.ltrim(3)).pipe(concat(check))
+})
+
+test("scrub", function (t) {
+  t.plan(1)
+
+  function check(records) {
+    var expected = [
+      {v: 50, foo: 150},
+      {v: 150, foo: 1150},
+      {v: 500, foo: 1500},
+    ]
+    t.deepEquals(records, expected, "Got expected records")
+  }
+
+  var stream = spigot({objectMode: true}, [
+    {v: 50, foo: 150},
+    {v: 100},
+    {v: 150, foo: 1150},
+    {v: 250},
+    {v: 500, foo: 1500},
+    {v: 550},
+  ])
+
+  stream.pipe(filters.scrub()).pipe(concat(check))
 })
 
 test("filter", function (t) {
