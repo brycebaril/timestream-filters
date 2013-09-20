@@ -27,8 +27,8 @@
     "url": "https://github.com/Ravenwall/timestream-filters/issues"
   },
   "dependencies": {
-    "through2": "~0.2.1",
-    "through2-filter": "~1.1.0"
+    "through2": "~0.2.2",
+    "through2-filter": "~1.2.0"
   },
   "devDependencies": {
     "stream-spigot": "~2.1.1",
