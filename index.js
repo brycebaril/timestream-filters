@@ -45,7 +45,7 @@ function ltrim(n) {
   })
 }
 
-function scrub(fn) {
+function scrub() {
   return throughFilter({objectMode: true}, function (record) {
     return Object.keys(record).length > 1
   })

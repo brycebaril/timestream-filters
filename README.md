@@ -3,6 +3,10 @@ timestream-filters
 
 [![NPM](https://nodei.co/npm/timestream-filters.png)](https://nodei.co/npm/timestream-filters/)
 
+
+[![david-dm](https://david-dm.org/brycebaril/timestream-filters.png)](https://david-dm.org/brycebaril/timestream-filters/)
+[![david-dm](https://david-dm.org/brycebaril/timestream-filters/dev-status.png)](https://david-dm.org/brycebaril/timestream-filters#info=devDependencies/)
+
 Filter functions for sequential objectMode data, e.g. timeseries data.
 
 ```javascript
@@ -94,7 +98,7 @@ Remove any records that are "empty", that is they have no data beyond the timest
 `filter(fn)`
 ---
 
-Generically filter the stream. Provide a function `fn(record)` that returns true to keep keep the record for false to discard it.
+Generically filter the stream. Provide a function `fn(record)` that returns true to keep the record for false to discard it.
 
 LICENSE
 =======
