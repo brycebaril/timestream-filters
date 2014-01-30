@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Ravenwall/timestream-filters.git"
+    "url": "git@github.com:brycebaril/timestream-filters.git"
   },
   "keywords": [
     "stream",
@@ -24,15 +24,15 @@
   "author": "Bryce B. Baril",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Ravenwall/timestream-filters/issues"
+    "url": "https://github.com/brycebaril/timestream-filters/issues"
   },
   "dependencies": {
-    "through2": "~0.2.2",
+    "through2": "~0.4.1",
     "through2-filter": "~1.3.0"
   },
   "devDependencies": {
-    "stream-spigot": "~2.1.2",
-    "concat-stream": "~1.0.1",
-    "tape": "~1.1.1"
+    "stream-spigot": "~3.0.3",
+    "concat-stream": "~1.4.1",
+    "tape": "~2.4.0"
   }
 }
