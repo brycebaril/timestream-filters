@@ -24,6 +24,7 @@ function rtrim(n) {
     return callback()
   }, function (callback) {
     var self = this
+    this._queue = this._queue || []
     this._queue.map(function (r) { self.push(r) })
     return callback()
   })

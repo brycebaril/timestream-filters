@@ -15,6 +15,19 @@ test("init", function (t) {
   t.end()
 })
 
+test("range empty", function (t) {
+  t.plan(1)
+
+  function check(records) {
+    var expected = [ ]
+    t.deepEquals(records, expected, "Got empty result")
+  }
+
+  var stream = spigot({objectMode: true}, [ ])
+
+  stream.pipe(filters.range("v", 120, 500)).pipe(concat(check))
+})
+
 test("range", function (t) {
   t.plan(1)
 
@@ -37,6 +50,19 @@ test("range", function (t) {
   ])
 
   stream.pipe(filters.range("v", 120, 500)).pipe(concat(check))
+})
+
+test("rtrim empty", function (t) {
+  t.plan(1)
+
+  function check(records) {
+    var expected = [ ]
+    t.deepEquals(records, expected, "Got empty result")
+  }
+
+  var stream = spigot({objectMode: true}, [ ])
+
+  stream.pipe(filters.rtrim(3)).pipe(concat(check))
 })
 
 test("rtrim", function (t) {
@@ -63,6 +89,18 @@ test("rtrim", function (t) {
   stream.pipe(filters.rtrim(3)).pipe(concat(check))
 })
 
+test("ltrim empty", function (t) {
+  t.plan(1)
+
+  function check(records) {
+    var expected = [ ]
+    t.deepEquals(records, expected, "Got empty result")
+  }
+
+  var stream = spigot({objectMode: true}, [ ])
+
+  stream.pipe(filters.ltrim(3)).pipe(concat(check))
+})
 
 test("ltrim", function (t) {
   t.plan(1)
@@ -88,6 +126,19 @@ test("ltrim", function (t) {
   stream.pipe(filters.ltrim(3)).pipe(concat(check))
 })
 
+test("scrub emtpy", function (t) {
+  t.plan(1)
+
+  function check(records) {
+    var expected = [ ]
+    t.deepEquals(records, expected, "Got expected records")
+  }
+
+  var stream = spigot({objectMode: true}, [ ])
+
+  stream.pipe(filters.scrub()).pipe(concat(check))
+})
+
 test("scrub", function (t) {
   t.plan(1)
 
@@ -110,6 +161,23 @@ test("scrub", function (t) {
   ])
 
   stream.pipe(filters.scrub()).pipe(concat(check))
+})
+
+test("filter empty", function (t) {
+  t.plan(1)
+
+  function check(records) {
+    var expected = [ ]
+    t.deepEquals(records, expected, "Got empty result")
+  }
+
+  var stream = spigot({objectMode: true}, [ ])
+
+  function fn(record) {
+    return ((record.foo / 50) % 2) == 0
+  }
+
+  stream.pipe(filters.filter(fn)).pipe(concat(check))
 })
 
 test("filter", function (t) {

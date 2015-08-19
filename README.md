@@ -4,9 +4,6 @@ timestream-filters
 [![NPM](https://nodei.co/npm/timestream-filters.png)](https://nodei.co/npm/timestream-filters/)
 
 
-[![david-dm](https://david-dm.org/brycebaril/timestream-filters.png)](https://david-dm.org/brycebaril/timestream-filters/)
-[![david-dm](https://david-dm.org/brycebaril/timestream-filters/dev-status.png)](https://david-dm.org/brycebaril/timestream-filters#info=devDependencies/)
-
 Filter functions for sequential objectMode data, e.g. timeseries data.
 
 ```javascript
